@@ -1,0 +1,15 @@
+vsftpd:
+  image: dockerizedrupal/vsftpd:1.1.0
+  hostname: vsftpd
+  ports:
+    - "20:20"
+    - "21:21"
+    - "50000-50100:50000-50100"
+  environment:
+    SERVER_NAME: localhost
+    TIMEZONE: Etc/UTC
+    VSFTPD_1_USERNAME:
+    VSFTPD_1_PASSWORD:
+    VSFTPD_1_HOME:
+    VSFTPD_1_USER_ID: 1000
+    VSFTPD_1_GROUP_ID: 1000
