@@ -11,7 +11,7 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -h "${CONTAINER}" \
       -p 20:20 \
       -p 21:21 \
-      -p 50000-50100:50000-50100 \
+      -p 50000-50002:50000-50002 \
       -e SERVER_NAME="localhost" \
       -e TIMEZONE="Etc/UTC" \
       -e VSFTPD_1_USERNAME="" \
