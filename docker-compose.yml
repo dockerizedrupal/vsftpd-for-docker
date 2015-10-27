@@ -4,7 +4,7 @@ vsftpd:
   ports:
     - "20:20"
     - "21:21"
-    - "50000-50100:50000-50100"
+    - "50000-50002:50000-50002"
   environment:
     SERVER_NAME: localhost
     TIMEZONE: Etc/UTC
