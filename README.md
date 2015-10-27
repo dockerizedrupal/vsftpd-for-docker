@@ -20,15 +20,15 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -e VSFTPD_1_USER_ID="1000" \
       -e VSFTPD_1_GROUP_ID="1000" \
       -d \
-      dockerizedrupal/vsftpd:1.1.0
+      dockerizedrupal/vsftpd:1.1.1
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/vsftpd.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.1.0 \
-      && sudo docker build -t dockerizedrupal/vsftpd:1.1.0 . \
+      && git checkout 1.1.1 \
+      && sudo docker build -t dockerizedrupal/vsftpd:1.1.1 . \
       && cd -
 
 ## Changing the container behaviour on runtime through environment variables
