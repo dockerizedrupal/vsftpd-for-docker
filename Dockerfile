@@ -14,6 +14,6 @@ VOLUME ["/vsftpd"]
 
 EXPOSE 21
 EXPOSE 20
-EXPOSE 50000-50100
+EXPOSE 50000-50002
 
 ENTRYPOINT ["/src/entrypoint.sh", "run"]
