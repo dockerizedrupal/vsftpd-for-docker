@@ -3,12 +3,16 @@
 <% scope.to_hash.keys.each do |variable| -%>
 <% if (variable =~ /^vsftpd_[[:digit:]]+_username$/) -%>
 <% i = variable.split('_')[1] -%>
-  groupadd -o -g "<%= eval("@vsftpd_#{i}_group_id") %>" "<%= eval("@vsftpd_#{i}_username") %>"
+groupadd -o -g "<%= eval("@vsftpd_#{i}_group_id") %>" "<%= eval("@vsftpd_#{i}_username") %>"
 
-  useradd -m -d "<%= eval("@vsftpd_#{i}_home") %>" -o -s /bin/bash -u "<%= eval("@vsftpd_#{i}_user_id") %>" -g "<%= eval("@vsftpd_#{i}_group_id") %>" "<%= eval("@vsftpd_#{i}_username") %>"
+if [ ! -d "<%= eval("@vsftpd_#{i}_home") %>" ]; then
+  mkdir -p "<%= eval("@vsftpd_#{i}_home") %>"
+fi
 
-  echo "<%= eval("@vsftpd_#{i}_username") %>:<%= eval("@vsftpd_#{i}_password") %>" | chpasswd
+useradd -M -d "<%= eval("@vsftpd_#{i}_home") %>" -o -s /bin/bash -u "<%= eval("@vsftpd_#{i}_user_id") %>" -g "<%= eval("@vsftpd_#{i}_group_id") %>" "<%= eval("@vsftpd_#{i}_username") %>"
 
-  chown "<%= eval("@vsftpd_#{i}_username") %>.<%= eval("@vsftpd_#{i}_username") %>" "<%= eval("@vsftpd_#{i}_home") %>"
+echo "<%= eval("@vsftpd_#{i}_username") %>:<%= eval("@vsftpd_#{i}_password") %>" | chpasswd
+
+chown "<%= eval("@vsftpd_#{i}_username") %>.<%= eval("@vsftpd_#{i}_username") %>" "<%= eval("@vsftpd_#{i}_home") %>"
 <% end -%>
 <% end -%>
