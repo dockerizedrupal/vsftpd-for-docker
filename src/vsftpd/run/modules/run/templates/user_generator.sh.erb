@@ -13,6 +13,6 @@ useradd -M -d "<%= eval("@vsftpd_#{i}_home") %>" -o -s /bin/bash -u "<%= eval("@
 
 echo "<%= eval("@vsftpd_#{i}_username") %>:<%= eval("@vsftpd_#{i}_password") %>" | chpasswd
 
-chown "<%= eval("@vsftpd_#{i}_username") %>.<%= eval("@vsftpd_#{i}_username") %>" "<%= eval("@vsftpd_#{i}_home") %>"
+chown "<%= eval("@vsftpd_#{i}_username") %>:<%= eval("@vsftpd_#{i}_username") %>" "<%= eval("@vsftpd_#{i}_home") %>"
 <% end -%>
 <% end -%>
