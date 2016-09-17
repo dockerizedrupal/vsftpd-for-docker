@@ -1,9 +1,9 @@
 {
-  "name": "docker-vsftpd",
-  "version": "1.1.4",
+  "name": "vsftpd-for-docker",
+  "version": "2.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dockerizedrupal/docker-vsftpd.git"
+    "url": "https://github.com/dockerizedrupal/vsftpd-for-docker.git"
   },
   "license": "MIT",
   "dependencies": {

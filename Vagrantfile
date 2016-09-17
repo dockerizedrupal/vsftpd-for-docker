@@ -1,4 +1,4 @@
-VERSION = "1.1.4"
+VERSION = "2.0.0"
 
 required_plugins = %w(vagrant-vbguest)
 
@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "vsftpd"
 
   config.vm.provider "virtualbox" do |v|
-    name = "dockerizedrupal-docker-vsftpd-" + VERSION
+    name = "dockerizedrupal-vsftpd-for-docker-" + VERSION
 
     name.gsub!(".", "-")
 

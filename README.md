@@ -1,6 +1,4 @@
-> **Notice:** *This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) initiative.*
-
-# docker-vsftpd
+# vsftpd-for-docker
 
 A Docker image for [vsftpd](https://security.appspot.com/vsftpd.html).
 
@@ -20,15 +18,15 @@ A Docker image for [vsftpd](https://security.appspot.com/vsftpd.html).
       -e VSFTPD_1_USER_ID="1000" \
       -e VSFTPD_1_GROUP_ID="1000" \
       -d \
-      dockerizedrupal/vsftpd:1.1.4
+      dockerizedrupal/vsftpd:2.0.0
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
-      && git clone https://github.com/dockerizedrupal/vsftpd.git "${TMP}" \
+      && git clone https://github.com/dockerizedrupal/vsftpd-for-docker.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.1.4 \
-      && sudo docker build -t dockerizedrupal/vsftpd:1.1.4 . \
+      && git checkout 2.0.0 \
+      && sudo docker build -t dockerizedrupal/vsftpd:2.0.0 . \
       && cd -
 
 ## License
